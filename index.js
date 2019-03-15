@@ -67,7 +67,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // server setup
-const PORT = 8080 || process.env.PORT
+const PORT = process.env.PORT || 8080
 app.listen(PORT, () => {
   console.log(`server listening on port ${PORT}`)
 })
