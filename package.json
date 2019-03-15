@@ -1,0 +1,17 @@
+{
+  "name": "whats-the-weather",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:chungleee/whats-the-weather.git",
+  "author": "Leon <leon.karho.chung@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^4.1.0"
+  },
+  "dependencies": {
+    "@google/maps": "^0.5.5",
+    "axios": "^0.18.0",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1"
+  }
+}
