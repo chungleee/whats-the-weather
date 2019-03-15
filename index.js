@@ -1,22 +1,23 @@
 const express = require('express')
 const morgan = require('morgan')
 const axios = require('axios')
-const googleMapsClient = require('@google/maps')
+const cors = require('cors')
 
 // keys
 const { darkSkyKey, googleMapsKey } = require('./config/keys')
+
+// google maps client
+const googleMapsClient = require('@google/maps').createClient({
+  key: googleMapsKey,
+  Promise: Promise
+})
 
 // init app
 const app = express()
 
 // middlewares
+app.use(cors())
 app.use(morgan('tiny'))
-
-// init google maps
-googleMapsClient.createClient({
-  key: googleMapsKey,
-  Promise: Promise
-})
 
 // api endpoints
 app.get('/currently/:latitude,:longitude', (req, res) => {
