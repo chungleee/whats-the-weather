@@ -87,16 +87,8 @@ class App extends Component {
     // concurrent get requests
     axios
       .all([
-        axios.get(
-          `http://localhost:8080/currently/${coords.latitude},${
-            coords.longitude
-          }`
-        ),
-        axios.get(
-          `http://localhost:8080/location/${coords.latitude},${
-            coords.longitude
-          }`
-        )
+        axios.get(`/currently/${coords.latitude},${coords.longitude}`),
+        axios.get(`/location/${coords.latitude},${coords.longitude}`)
       ])
       .then(
         axios.spread((currently, location) => {
